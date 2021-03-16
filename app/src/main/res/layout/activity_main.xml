@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <ViewFlipper
+        android:id="@+id/viewflipper"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/constraintlayout">
+
+        <RelativeLayout
+            android:id="@+id/relativelayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/constraintlayout"
+            app:layout_constraintStart_toStartOf="@id/constraintlayout"
+            app:layout_constraintEnd_toStartOf="@id/relativelayout2">
+
+            <ImageView
+                android:id="@+id/image_1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/moonman" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_1"
+                android:text="Testing" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/constraintlayout"
+            app:layout_constraintStart_toEndOf="@id/relativelayout1"
+            app:layout_constraintEnd_toStartOf="@id/relativelayout3">
+
+        <ImageView
+            android:orientation="vertical"
+            android:id="@+id/image_2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/moonman" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_2"
+            android:text="Testing" />
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/constraintlayout"
+            app:layout_constraintStart_toEndOf="@id/relativelayout2"
+            app:layout_constraintEnd_toEndOf="@id/constraintlayout">
+
+            <ImageView
+                android:id="@+id/image_3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/moonman" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_3"
+                android:text="Testing" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

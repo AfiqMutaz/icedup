@@ -2,13 +2,16 @@ package com.example.icedup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {
 
     ViewFlipper v_flipper;
+    ImageView imgView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,15 @@ public class MainActivity extends AppCompatActivity {
         for (int image: images) {
             flipperImages(image);
         }
+
+        imgView = findViewById(R.id.image_1);
+        imgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ItemDisplay.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void flipperImages(int image) {

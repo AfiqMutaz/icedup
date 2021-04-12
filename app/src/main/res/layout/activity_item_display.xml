@@ -1,30 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ItemDisplay">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Title"
-        android:textSize="36sp"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:paddingBottom="12dp">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/displayImage"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Item Description"
-        android:textSize="24sp"/>
+        <TextView
+            android:id="@+id/displayName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/displayImage"
+            android:text="Item Name"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            android:layout_marginTop="10dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Item Price"/>
+        <TextView
+            android:id="@+id/displayPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/displayName"
+            android:text="Item Price"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/displayDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/displayPrice"
+            android:text="Item Description"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/lblSizes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sizes"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_below="@+id/displayDescription"
+            android:layout_marginTop="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/radGrpSizes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblSizes"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radXL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="XL" />
+
+            <RadioButton
+                android:id="@+id/radL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="L" />
+
+            <RadioButton
+                android:id="@+id/radM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="M" />
+
+            <RadioButton
+                android:id="@+id/radS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="S" />
+
+            <RadioButton
+                android:id="@+id/radXS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="XS" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/lblQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_below="@id/radGrpSizes"/>
+
+        <Spinner
+            android:id="@+id/spinQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblQuantity" />
+
+        <Button
+            android:id="@+id/btnAddBag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinQuantity"
+            android:text="Add to Bag" />
+
+        <Button
+            android:id="@+id/btnViewBag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnAddBag"
+            android:text="View Bag" />
+    </RelativeLayout>
+</ScrollView>
